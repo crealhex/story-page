@@ -1,4 +1,5 @@
 FROM nginx
-WORKDIR /usr/share/nginx/html
+ENV NGINX_PATH=/usr/share/nginx/html
+WORKDIR ${NGINX_PATH}
 
-COPY . .
+COPY src/ ${NGINX_PATH}
