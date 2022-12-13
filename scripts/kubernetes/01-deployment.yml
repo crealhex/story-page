@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: denisse-party
+  labels:
+    app: denisse-party
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: denisse-party
+  template:
+    metadata:
+      labels:
+        app: denisse-party
+    spec:
+      containers:
+      - name: denisse-party
+        image: warender/sdr-4ever:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+          protocol: TCP

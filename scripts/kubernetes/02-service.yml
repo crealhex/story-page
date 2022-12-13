@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: denisse-party-svc
+spec:
+  selector:
+    app: denisse-party
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
